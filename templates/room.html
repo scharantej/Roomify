@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chat Room</title>
+</head>
+<body>
+<h1>Chat Room {{ room_id }}</h1>
+<ul id="messages">
+{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}
+</ul>
+<form action="/send_message" method="post">
+<input type="hidden" name="room_id" value="{{ room_id }}">
+<input type="text" name="message">
+<input type="submit" value="Send">
+</form>
+</body>
+</html>
+
